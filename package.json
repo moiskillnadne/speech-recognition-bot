@@ -1,0 +1,22 @@
+{
+  "name": "telegram_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "yarn build && node ./build/index.js",
+    "build": "tsc --project tsconfig.json",
+    "clear:build": "rm -rf ./build"
+  },
+  "author": "Victor Ryabkov",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "globally": "^0.0.0",
+    "telegraf": "^4.4.1",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10"
+  }
+}
