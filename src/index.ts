@@ -17,6 +17,7 @@ bot.start((ctx) => ctx.reply('Welcome!'))
 // bot.on('voice', googleRecognize)
 
 bot.on('voice', async (ctx) => {
+  ctx.reply('Await please, I am trying to understand your message!')
   const linkToFile = getFileAPI(ctx.update.message.voice.file_id)
   const assembly = axios.create({
     baseURL: 'https://api.assemblyai.com/v2',
@@ -50,6 +51,7 @@ bot.on('voice', async (ctx) => {
     }
 
     if (result) {
+      ctx.forwardMessage(ctx.chat.id)
       ctx.reply(result)
     }
   } catch (err) {
